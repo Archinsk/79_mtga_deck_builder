@@ -4,8 +4,13 @@
 
   .sidebar {
     background-color: yellow;
-    width: 10rem;
+    width: 20rem;
     padding: 0.5rem;
+
+    .decks-list-item {
+      background-color: grey;
+      margin-bottom: 0.5rem;
+    }
   }
 
   main {
@@ -14,6 +19,7 @@
     flex-direction: column;
 
     .card-filter {
+      background-color: orange;
       height: 5rem;
     }
 
@@ -29,6 +35,68 @@
       height: 50vh;
       padding: 0.5rem;
       display: flex;
+      flex-wrap: wrap;
+
+      .deck-builder-column {
+        display: flex;
+        flex-direction: column;
+
+        .decks-list-item {
+          background-color: darkgrey;
+          width: 11.5rem;
+          height: 16rem;
+          margin-right: 0.5rem;
+          margin-bottom: -11.375rem;
+          position: relative;
+          border-radius: 0.625rem;
+          transition: margin 0.2s;
+
+          img {
+            height: 100%;
+            border-radius: 0.625rem;
+          }
+
+          .card-count {
+            position: absolute;
+            top: 2.25rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .card-count-number {
+              background-color: rgba(255, 255, 255, 0.5);
+              width: 1.9375rem;
+              height: 1.9375rem;
+              border-radius: 0.1875rem;
+              margin-left: 0.5rem;
+              margin-right: 0.5rem;
+            }
+          }
+
+          &:not(.multiple) {
+            margin-bottom: -14rem;
+
+            .card-count {
+              display: none;
+            }
+          }
+
+          &:not(.active) {
+            button {
+              display: none;
+            }
+          }
+
+          &.active {
+            margin-bottom: -8rem;
+
+            .card-count {
+              display: flex;
+            }
+          }
+        }
+      }
     }
   }
 }

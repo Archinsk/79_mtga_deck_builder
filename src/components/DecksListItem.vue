@@ -9,9 +9,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.decks-list-item {
-  background-color: grey;
-  margin-bottom: 0.5rem;
-}
-</style>
+<style lang="scss"></style>

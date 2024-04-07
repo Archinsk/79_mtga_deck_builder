@@ -9,8 +9,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.card-filter {
-  background-color: orange;
-}
-</style>
+<style lang="scss"></style>
