@@ -8,7 +8,7 @@
           :name="card.name"
           :imageUrl="card.imageUrl"
           :count="card.count"
-          :active="card.id === activeCard.id"
+          :active="card.id === activeCard?.id"
           :key="card.id"
           @click="activateCard(card)"
         ></card-mtga>
@@ -22,7 +22,7 @@
           :name="card.name"
           :imageUrl="card.imageUrl"
           :count="card.count"
-          :active="card.id === activeCard.id"
+          :active="card.id === activeCard?.id"
           :key="card.id"
           @click="activateCard(card)"
         ></card-mtga>
@@ -36,7 +36,7 @@
           :name="card.name"
           :imageUrl="card.imageUrl"
           :count="card.count"
-          :active="card.id === activeCard.id"
+          :active="card.id === activeCard?.id"
           :key="card.id"
           @click="activateCard(card)"
         ></card-mtga>
@@ -50,7 +50,7 @@
           :name="card.name"
           :imageUrl="card.imageUrl"
           :count="card.count"
-          :active="card.id === activeCard.id"
+          :active="card.id === activeCard?.id"
           :key="card.id"
           @click="activateCard(card)"
         ></card-mtga>
@@ -64,7 +64,7 @@
           :name="card.name"
           :imageUrl="card.imageUrl"
           :count="card.count"
-          :active="card.id === activeCard.id"
+          :active="card.id === activeCard?.id"
           :key="card.id"
           @click="activateCard(card)"
         ></card-mtga>
@@ -78,7 +78,7 @@
           :name="card.name"
           :imageUrl="card.imageUrl"
           :count="card.count"
-          :active="card.id === activeCard.id"
+          :active="card.id === activeCard?.id"
           :key="card.id"
           @click="activateCard(card)"
         ></card-mtga>
@@ -92,19 +92,19 @@
         :name="card.name"
         :imageUrl="card.imageUrl"
         :count="card.count"
-        :active="card.id === activeCard.id"
+        :active="card.id === activeCard?.id"
         :key="card.id"
         @click="activateCard(card)"
       ></card-mtga>
     </div>
-    <div class="deck-builder-column">
+    <div v-if="false" class="deck-builder-column">
       <card-mtga
         v-for="card of deck.sideBoard"
         :id="card.id"
         :name="card.name"
         :imageUrl="card.imageUrl"
         :count="card.count"
-        :active="card.id === activeCard.id"
+        :active="card.id === activeCard?.id"
         :key="card.id"
         @click="activateCard(card)"
       ></card-mtga>

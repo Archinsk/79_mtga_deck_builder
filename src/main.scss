@@ -11,6 +11,17 @@
       background-color: grey;
       margin-bottom: 0.5rem;
     }
+
+    #mana-combination {
+      .card-body {
+        display: flex;
+        text-align: center;
+
+        img {
+          height: 1.5rem;
+        }
+      }
+    }
   }
 
   main {

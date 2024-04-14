@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import getCardChances from "./calculations";
 
 Vue.use(Vuex);
 
@@ -23,7 +24,7 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/c/4/c4ac7570-e74e-4081-ac53-cf41e695b7eb.jpg?1562563598",
           types: ["enchantment"],
-          manaСost: "c,k",
+          manaСost: "c,b",
           manaValue: 2,
           count: 1,
         },
@@ -33,7 +34,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/c/f/cf5fe0bc-02b7-4bcf-8adf-93af7ad76963.jpg?1694044861",
           types: ["creature"],
-          manaСost: "k,k",
+          subtypes: ["vampire", "spirit"],
+          manaСost: "b,b",
           manaValue: 2,
           count: 3,
         },
@@ -43,7 +45,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=546529&type=card",
           types: ["creature"],
-          manaСost: "k,k",
+          subtypes: ["vampire"],
+          manaСost: "b,b",
           manaValue: 2,
           count: 3,
         },
@@ -53,7 +56,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=469099&type=card",
           types: ["creature"],
-          manaСost: "k",
+          subtypes: ["vampire", "knight"],
+          manaСost: "b",
           manaValue: 1,
           count: 3,
         },
@@ -63,7 +67,7 @@ export default new Vuex.Store({
           imageUrl:
             "	https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=469109&type=card",
           types: ["planeswalker"],
-          manaСost: "c*2,k",
+          manaСost: "c*2,b",
           manaValue: 3,
           count: 4,
         },
@@ -73,7 +77,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/d/4/d4f6027a-003a-4f9d-929a-0b6da1fa42c9.jpg?1699044094",
           types: ["creature"],
-          manaСost: "c,k,k,k",
+          subtypes: ["vampire", "demon"],
+          manaСost: "c,b,b,b",
           manaValue: 4,
           count: 2,
         },
@@ -83,7 +88,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=557473&type=card",
           types: ["creature"],
-          manaСost: "c*2,b/k,k,k/r",
+          subtypes: ["vampire", "rogue"],
+          manaСost: "c*2,u/b,b,b/r",
           manaValue: 5,
           count: 1,
         },
@@ -133,7 +139,7 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/f/7/f75f51d3-2df7-4b37-bbd1-2635db64bc22.jpg?1701720339",
           types: ["sorcery"],
-          manaСost: "k",
+          manaСost: "b",
           manaValue: 1,
           count: 2,
         },
@@ -143,7 +149,7 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/6/f/6fff168c-6a0f-473f-86db-8cc8f619fd58.jpg?1597172582",
           types: ["sorcery"],
-          manaСost: "k",
+          manaСost: "b",
           manaValue: 1,
           count: 2,
         },
@@ -153,7 +159,7 @@ export default new Vuex.Store({
           imageUrl:
             "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=459290&type=card",
           types: ["enchantment"],
-          manaСost: "k",
+          manaСost: "b",
           manaValue: 1,
           count: 3,
         },
@@ -163,7 +169,7 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/f/b/fb0271e4-8ad1-4ad9-9b3e-7abf911f3059.jpg?1600701185",
           types: ["enchantment"],
-          manaСost: "k",
+          manaСost: "b",
           manaValue: 1,
           count: 1,
         },
@@ -173,7 +179,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/0/f/0fe79ee4-c3f3-4a6b-a967-203ca3b70ee5.jpg?1594736442",
           types: ["creature"],
-          manaСost: "c*2,k",
+          subtypes: ["vampire", "cleric"],
+          manaСost: "c*2,b",
           manaValue: 3,
           count: 1,
         },
@@ -193,7 +200,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/0/8/0850b41d-3589-40cd-ae22-cc5b4ddee1c4.jpg?1698988238",
           types: ["creature"],
-          manaСost: "c,k,k",
+          subtypes: ["vampire", "ally"],
+          manaСost: "c,b,b",
           manaValue: 3,
           count: 1,
         },
@@ -203,7 +211,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=546534&type=card",
           types: ["creature"],
-          manaСost: "k",
+          subtypes: ["vampire", "noble"],
+          manaСost: "b",
           manaValue: 1,
           count: 3,
         },
@@ -213,7 +222,7 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/0/5/05bdd22c-3e11-4c29-bdfa-d3dfc0e90a9f.jpg?1699044085",
           types: ["instant"],
-          manaСost: "c,k",
+          manaСost: "c,b",
           manaValue: 2,
           count: 2,
         },
@@ -231,7 +240,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/4/c/4c4a3119-c70a-46ff-8ede-6356f2b7bc13.jpg?1675957057",
           types: ["creature"],
-          manaСost: "c,k",
+          subtypes: ["vampire", "phyrexian"],
+          manaСost: "c,b",
           manaValue: 2,
           count: 1,
         },
@@ -241,7 +251,7 @@ export default new Vuex.Store({
           imageUrl:
             "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=569284&type=card",
           types: ["sorcery"],
-          manaСost: "c,k",
+          manaСost: "c,b",
           manaValue: 2,
           count: 2,
         },
@@ -253,7 +263,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/2/8/28934cf3-c1e0-49c9-93ce-fd60b1881884.jpg?1675957442",
           types: ["creature"],
-          manaСost: "c*4,k",
+          subtypes: ["vampire", "phyrexian"],
+          manaСost: "c*4,b",
           manaValue: 5,
           count: 1,
         },
@@ -263,7 +274,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=543517&type=card",
           types: ["creature"],
-          manaСost: "c,k",
+          subtypes: ["vampire", "wizard"],
+          manaСost: "c,b",
           manaValue: 2,
           count: 1,
         },
@@ -273,7 +285,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/a/b/ab76e956-5d6c-49b8-991c-c39d5b18b876.jpg?1681158416",
           types: ["creature"],
-          manaСost: "c,k",
+          subtypes: ["vampire"],
+          manaСost: "c,b",
           manaValue: 2,
           count: 1,
         },
@@ -283,7 +296,7 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/a/a/aab958d5-9c1f-420f-b358-ec0325f22f84.jpg?1555040347",
           types: ["instant"],
-          manaСost: "c*2,k",
+          manaСost: "c*2,b",
           manaValue: 3,
           count: 1,
         },
@@ -293,7 +306,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/8/9/89345f55-2b32-4356-945a-d56dded39909.jpg?1699044158",
           types: ["creature"],
-          manaСost: "c*2,k",
+          subtypes: ["vampire", "cleric"],
+          manaСost: "c*2,b",
           manaValue: 3,
           count: 1,
         },
@@ -303,7 +317,7 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/3/8/387c9f62-6a93-4c88-bdaf-205717d91216.jpg?1573509609",
           types: ["instant"],
-          manaСost: "k",
+          manaСost: "b",
           manaValue: 1,
           count: 1,
         },
@@ -313,7 +327,7 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/c/2/c2744e16-1016-432a-8698-2a2d407e7b04.jpg?1695436280",
           types: ["enchantment"],
-          manaСost: "c,k,k",
+          manaСost: "c,b,b",
           manaValue: 3,
           count: 1,
         },
@@ -323,7 +337,7 @@ export default new Vuex.Store({
           imageUrl:
             "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=475225&type=card",
           types: ["sorcery"],
-          manaСost: "c,k,k",
+          manaСost: "c,b,b",
           manaValue: 3,
           count: 1,
         },
@@ -333,7 +347,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/c/9/c9a5e924-291c-43b7-bb34-5ac2842a60e7.jpg?1605327970",
           types: ["creature"],
-          manaСost: "c*2,k",
+          subtypes: ["vampire", "aetherborn"],
+          manaСost: "c*2,b",
           manaValue: 3,
           count: 1,
         },
@@ -343,7 +358,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=543495&type=card",
           types: ["creature"],
-          manaСost: "c*2,k,k",
+          subtypes: ["vampire"],
+          manaСost: "c*2,b,b",
           manaValue: 4,
           count: 1,
         },
@@ -353,7 +369,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=569295&type=card",
           types: ["creature"],
-          manaСost: "c,k,k",
+          subtypes: ["vampire", "rogue"],
+          manaСost: "c,b,b",
           manaValue: 3,
           count: 1,
         },
@@ -363,7 +380,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/0/7/078933b3-6d82-45f2-94e8-addf54cf1704.jpg?1706241798",
           types: ["creature"],
-          manaСost: "c*3,k,k,k",
+          subtypes: ["vampire", "assassin"],
+          manaСost: "c*3,b,b,b",
           manaValue: 6,
           count: 1,
         },
@@ -373,7 +391,8 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/d/0/d0a3339d-6067-4af5-9536-7e2d5ddd8918.jpg?1699044164",
           types: ["creature"],
-          manaСost: "c*3,k,k",
+          subtypes: ["vampire", "knight"],
+          manaСost: "c*3,b,b",
           manaValue: 5,
           count: 1,
         },
@@ -383,6 +402,7 @@ export default new Vuex.Store({
           imageUrl:
             "https://cards.scryfall.io/large/front/3/2/32fd8b7c-baf3-4d3d-be6f-044a917b11a0.jpg?1701115816",
           types: ["creature", "artifact"],
+          subtypes: ["golem"],
           manaСost: "c*4",
           manaValue: 5,
           count: 1,
@@ -393,13 +413,15 @@ export default new Vuex.Store({
           imageUrl:
             "https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=515871&type=card",
           types: ["creature"],
-          manaСost: "c*2,k",
+          subtypes: ["vampire", "warlock"],
+          manaСost: "c*2,b",
           manaValue: 5,
           count: 1,
         },
       ],
     },
     activeCard: null,
+    variants: null,
   },
   getters: {
     deckLands: (state) => {
@@ -408,11 +430,82 @@ export default new Vuex.Store({
     deckNonLands: (state) => {
       return state.deck.cards.filter((card) => !card.types.includes("land"));
     },
+    deckInfo: (state) => {
+      let deckInfo = {
+        manaValues: {},
+        manaValueAverage: "",
+        manas: [0, 0, 0, 0, 0, 0, 0],
+        types: {
+          creature: 0,
+          instant: 0,
+          sorcery: 0,
+          enchantment: 0,
+          planeswalker: 0,
+          land: 0,
+        },
+        creatureTypes: {},
+      };
+      state.deck.cards.forEach((card) => {
+        card.types.forEach((type) => {
+          deckInfo.types[type] += card.count;
+          let cardManaValuesColumn;
+          if (type !== "land") {
+            if (card.manaValue < 1) {
+              cardManaValuesColumn = 1;
+            } else if (card.manaValue > 6) {
+              cardManaValuesColumn = 1;
+            } else {
+              cardManaValuesColumn = card.manaValue;
+            }
+            console.log(`${card.name} - ${cardManaValuesColumn}`);
+            if (deckInfo.manaValues[type]) {
+              deckInfo.manaValues[type][cardManaValuesColumn - 1] += card.count;
+            } else {
+              deckInfo.manaValues[type] = [0, 0, 0, 0, 0, 0];
+              deckInfo.manaValues[type][cardManaValuesColumn - 1] = card.count;
+            }
+          }
+          if (type === "creature") {
+            card.subtypes.forEach((subtype) => {
+              if (deckInfo.creatureTypes[subtype]) {
+                deckInfo.creatureTypes[subtype] += card.count;
+              } else {
+                deckInfo.creatureTypes[subtype] = card.count;
+              }
+            });
+          }
+        });
+        if (!card.types.includes("land")) {
+          if (card.manaСost.split(",").includes("w")) {
+            deckInfo.manas[0] += card.count;
+          }
+          if (card.manaСost.split(",").includes("u")) {
+            deckInfo.manas[1] += card.count;
+          }
+          if (card.manaСost.split(",").includes("b")) {
+            deckInfo.manas[2] += card.count;
+          }
+          if (card.manaСost.split(",").includes("r")) {
+            deckInfo.manas[3] += card.count;
+          }
+          if (card.manaСost.split(",").includes("g")) {
+            deckInfo.manas[4] += card.count;
+          }
+        } else {
+          deckInfo.manas[6] += card.count;
+        }
+      });
+      return deckInfo;
+    },
   },
   mutations: {
     activateCard(state, card) {
       console.log(card.name);
       state.activeCard = card;
+    },
+    calculateChances(state) {
+      console.log("считаю шансы");
+      state.variants = getCardChances(60, 7, 4);
     },
   },
   actions: {},

@@ -5,14 +5,16 @@
     <decks-list-item />
     <decks-list-item />
     <decks-list-item />
+    <DeckInfo />
   </aside>
 </template>
 
 <script>
 import DecksListItem from "./DecksListItem";
+import DeckInfo from "./DeckInfo";
 export default {
   name: "SideBar",
-  components: { DecksListItem },
+  components: { DecksListItem, DeckInfo },
 };
 </script>
 
